@@ -1,5 +1,6 @@
 import { BASE_URL } from "../config/components";
 
+// Añadir usuario
 export const addUser = async (userName) => {
     try {
         const responseData = await fetch(`${BASE_URL}/users/${userName}`, {
@@ -19,6 +20,7 @@ export const addUser = async (userName) => {
     }
 }
 
+// Obtener usuario
 export const getUser = async (userName) => {
     try {
       const responseData = await fetch(`${BASE_URL}/users/${userName}`);

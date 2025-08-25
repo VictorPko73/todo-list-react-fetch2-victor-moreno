@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getTodosByUser, createTodo, deleteTodo } from "../services/todoService";
 import { addUser, getUser } from "../services/userService";
 
-const USERNAME = 'juan';
+const USERNAME = 'victormoreno';
 
 function TodoList() {
     const [input, setInput] = useState('');
@@ -39,6 +39,7 @@ function TodoList() {
             return;
         }
         try {
+            //Crear tarea
             const created = await createTodo(userName, value);
             // La API devuelve el todo creado o toda la lista y añadimos al final
             if (created && created.id) {
@@ -53,7 +54,7 @@ function TodoList() {
         }
     }
 
- 
+    // Eliminar tarea
     const removeItem = async (idx) => {
         const item = list[idx];
         const id = item?.id;
